@@ -1,0 +1,75 @@
+/* ---網頁Banner--- */
+
+.hero h1 {
+    font-size: 5rem;
+}
+
+.hero .hero-text {
+    width: 380px;
+    margin: 40px;
+}
+
+.hero p {
+    margin-bottom: 3em;
+}
+
+.hero form [type="email"] {
+    width: 55%;
+}
+
+.hero form [type="submit"] {
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+}
+
+/* ---服務介紹區塊--- */
+
+.services ul {
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.services li {
+    width: 45%;
+}
+
+/* ---六個磚塊--- */
+
+.details div {
+    width: 40vw;
+    min-height: 20rem;
+}
+
+/* 改變磚塊的顯示順序，以順應佈局的改變 */
+.details div:nth-child(1) {order: 1;}
+.details div:nth-child(2) {order: 2;}
+.details div:nth-child(3) {order: 4;}
+.details div:nth-child(4) {order: 3;}
+.details div:nth-child(5) {order: 5;}
+.details div:nth-child(6) {order: 6;}
+
+.details .brick-text img {
+    width: 60px;
+    height: 60px;
+}
+
+/* 避免圖片比例被破壞 */
+.details .brick-img img {
+    object-fit: cover;
+}
+
+/* ---方案選擇區塊--- */
+
+.plans {
+    font-size: .75rem;
+}
+
+.plans .plan-cards a {
+    margin: 2%;
+}
+
+.plans .plan-cards a img {
+    width: 100px;
+    height: 100px;
+}

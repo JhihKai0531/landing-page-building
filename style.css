@@ -1,0 +1,459 @@
+/* 變數宣告 */
+:root {
+    --white: #fff;
+    --p-white: #e7e7e7;
+    --bg-light-gray: #e7e7e7;
+    --text-dark-gray: #333;
+    --btn-dark-gray: #333;
+    --bg-dark-gray: #333;
+    --medium-gray: #a6a6a6;
+    --hover-card-white: #e7e7e7;
+    --hover-text-dark-gray: #ddd;
+    --hover-btn-dark-gray: #444;
+    --press-text-dark-gray: #f3f3f3;
+    --one: #FD672A;
+    --two: #F1311A;
+    --three: #2A2D34;
+    --four: #555C66;
+    --heading-orange: #FD672A;
+}
+
+/* ---網頁總設定--- */
+/* 邊距重置、box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 全部的字體設定 */
+html {
+    font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+}
+
+/* 統一<p>的行高 */
+p {
+    line-height: 1.5;
+}
+
+
+/* ---網頁導覽列--- */
+/* 寬高、margin無設定，padding有設定。因此區塊由內容撐開。 */
+.header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px 20px 60px;
+}
+
+/* Logo圖 */
+.header img {
+    width: 65px;
+    height: auto;
+}
+
+/* 導覽列（語意標籤） */
+.header nav {
+    align-self: flex-end;
+}
+
+/* 原本的導覽列，此標籤還是得存在 */
+.header ul {
+    display: flex;
+    list-style: none;
+    /* align-self: flex-end; */
+}
+
+/* 導覽列超連結 */
+/* 小方塊由內容撐開。 */
+.header ul li a {
+    display: block;
+    padding: 1em .5em;
+    text-decoration: none;
+    color: var(--text-dark-gray);
+    transition: all 200ms;
+}
+
+.header ul li a:hover {
+    background-color: var(--hover-text-dark-gray);
+}
+
+/* 漢堡選單按鈕，電腦版型不顯示 */
+.header button {
+    display: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 8px;
+    border-radius: 4px;
+}
+
+.header button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.header button:hover {
+    background-color: var(--hover-text-dark-gray);
+}
+
+.header button:active {
+    background-color: var(--press-text-dark-gray);
+}
+
+/* ---網頁Banner--- */
+/* 高度隨視窗寬度變動，但是有最小值 */
+/* 如果瀏覽器字體被設定超級大，還是會爆版喔~ */
+.hero {
+    height: calc(100vw * 750 / 1920);
+    background-image: url(./images/banner.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    min-height: 435px;
+}
+
+/* （如果要改成以內容高為高的話，再加入它） */
+/* .hero {
+    height: auto;
+    background-repeat: no-repeat;
+    background-color: var(--one);
+} */
+
+/* 位於橫幅左半部的大容器，包著我的小容器 */
+.hero .left-part {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 小容器，包著文字區塊們 + 輸入框 */
+.hero .hero-text {
+    width: 435px;
+    margin: 40px;
+}
+
+/* 大標題字型 */
+/* 找不到好看的QQ */
+@font-face {
+    font-family: "Cat Comic";
+    src: url(./fonts/Cat\ Comic.ttf);
+}
+
+.hero h1 {
+    color: var(--white);
+    font-family: "Cat Comic";
+    font-size: 6rem;
+    letter-spacing: .025em;
+    white-space: nowrap;
+}
+
+.hero p {
+    margin-top: 1em;
+    margin-bottom: 3.5em;
+    word-spacing: .125em;
+    color: var(--p-white);
+}
+
+/* 輸入框、送出按鈕 */
+.hero form {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+}
+
+.hero form [type="email"] {
+    width: 60%;
+    min-width: 190px;
+    padding-left: 1em;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px 0 0 4px;
+}
+
+.hero form [type="email"]::placeholder {
+    opacity: 1; /* for Firefox */
+    color: var(--medium-gray);
+}
+
+.hero form [type="submit"] {
+    padding-left: 1.75em;
+    padding-right: 1.75em;
+    border: none;
+    background-color: var(--btn-dark-gray);
+    color: var(--p-white);
+    letter-spacing: .125em;
+    border-radius: 0 4px 4px 0;
+}
+
+.hero form [type="submit"]:hover {
+    background-color: var(--hover-btn-dark-gray);
+    cursor: pointer;
+}
+
+/* ---服務介紹區塊--- */
+
+.services {
+    padding: 5%;
+}
+
+/* 裝那幾張卡的容器 */
+.services ul {
+    width: 1200px;
+    max-width: 85vw;
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+
+/* 卡片背景色 */
+.services li.service-01 {background-color: var(--one);}
+
+.services li.service-02 {background-color: var(--two);}
+
+.services li.service-03 {background-color: var(--three);}
+
+.services li.service-04 {background-color: var(--four);}
+
+/* 卡片裡的一些邊距設定 */
+.services li {
+    padding-bottom: 1.5rem;
+    width: 25%;
+    transition: 100ms;
+}
+
+.services li:hover {
+    transform: perspective(1000px) rotateY(15deg) scale(1.05);
+}
+
+.services li > * {
+    margin: 1.5rem 1.5rem;
+}
+
+/* 卡片內文字設定 */
+.services li h2 {
+    color: var(--white);
+    font-size: 4rem;
+}
+
+.services li h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.services li p {
+    color: var(--p-white);
+}
+
+.services li a img {
+    transition: 50ms;
+}
+
+.services li a:hover img {
+    transform: scale(1.1);
+}
+
+/* ---專業保證區塊--- */
+
+.emphasising {
+    background-color: var(--bg-light-gray);
+    padding: 4.2%;
+}
+
+/* 裝這幾段文字，以及按鈕 */
+.emphasising .emphasising-text {
+    width: 900px;
+    max-width: 75%;
+    margin: auto;
+}
+
+/* 文字設定 */
+.emphasising-text > * {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.emphasising h2 {
+    color: var(--heading-orange);
+    font-size: 3rem;
+}
+
+.emphasising p {
+    color: var(--text-dark-gray);
+}
+
+/* 按鈕設定 */
+.emphasising button {
+    border: none;
+    transition: all 100ms;
+}
+
+.emphasising a {
+    display: block;
+    color: var(--white);
+    background: linear-gradient(to right, var(--one), var(--two));
+    text-decoration: none;
+    padding: 1.2em 3.6em;
+}
+
+.emphasising button:hover {
+    opacity: .8;
+}
+
+/* ---六個磚塊--- */
+
+.details {
+    display: flex;
+    padding: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 每個格子 */
+.details div {
+    width: 27vw;
+    height: 27vw;
+    overflow: hidden;
+}
+
+/* 針對圖片格子 */
+.details .brick-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 針對文字格子 */
+.details .brick-text {
+    background-color: var(--bg-light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* 處理小圖片 */
+/* 已經去背了 */
+.details .brick-text img {
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+
+.details .brick-text p {
+    color: var(--text-dark-gray);
+}
+
+/* 文字格子的READ MORE */
+.details .brick-text a {
+    display: block;
+    color: var(--text-dark-gray);
+    text-decoration: none;
+    padding: 1rem 1rem;
+    font-weight: normal;
+    transition: all 200ms;
+}
+
+.details .brick-text a:hover {
+    background-color: var(--hover-text-dark-gray);
+}
+
+/* 底部的線 */
+/* 還沒懸停時就有東西在了，只是不顯示。 */
+.details .brick-text a::after {
+    content: "";
+    display: block;
+    width: 90%;
+    border: 1px solid var(--text-dark-gray);
+    position: relative;
+    top: .25em;
+    margin: auto;
+    visibility: hidden;
+}
+
+/* 懸停時顯示出來 */
+.details .brick-text a:hover::after {
+    visibility: visible;
+}
+
+/* ---方案選擇區塊--- */
+/* 設定了區塊的寬跟高，並把整區塊變成flex box */
+.plans {
+    background-image: url(./images/handbg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: calc(100vw * (600 / 1920) * (3 / 2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+/* 裝卡片們的容器 */
+.plans .plan-cards {
+    display: flex;
+    min-height: 50%;
+    max-width: 75vw;
+}
+
+/* 整張卡片都是超連結 */
+.plans .plan-cards a {
+    width: 400px;
+    max-width: 25vw;
+    background-color: var(--white);
+    text-align: center;
+    border: 2px solid var(--medium-gray);
+    padding: 1rem 1rem;
+    text-decoration: none;
+    color: var(--text-dark-gray);
+    margin: 2%;
+    transition: all 100ms;
+}
+
+/* 卡片被懸停時的互動 */
+/* 要嘛卡片變大，要嘛顏色改變，可能只能擇一。 */
+.plans .plan-cards a:hover {
+    /* background-color: var(--hover-card-white); */
+    transform: perspective(1000px) scale(1.05);
+}
+
+/* 一些文字邊距設定 */
+.plans .plan-cards a > * {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+/* 底部的「image from freepik」 */
+.plans > p {
+    margin: 1em;
+    text-align: center;
+}
+
+.plans > p a {
+    text-decoration: none;
+}
+
+/* ---頁尾區塊--- */
+
+.footer {
+    background-color: var(--bg-dark-gray);
+    padding: .5rem;
+}
+
+.footer p {
+    color: var(--p-white);
+    text-align: center;
+    margin: 2rem auto;
+    width: 500px;
+    max-width: 90%;
+}
+
+.footer p a {
+    color: lightblue;
+}
