@@ -115,6 +115,7 @@
     flex-direction: column;
 }
 
+/* 將卡片更改佈局為網格盒子（順便練習Grid Box語法） */
 .plans .plan-cards a {
     margin: 4%;
     max-width: 60vw;
