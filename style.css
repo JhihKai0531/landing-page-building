@@ -221,7 +221,7 @@ p {
 .services li {
     padding-bottom: 1.5rem;
     width: 25%;
-    transition: 100ms;
+    transition: transform 100ms;
 }
 
 .services li:hover {
@@ -399,12 +399,11 @@ p {
 .plans .plan-cards {
     display: flex;
     min-height: 50%;
-    max-width: 75vw;
 }
 
 /* 整張卡片都是超連結 */
 .plans .plan-cards a {
-    width: 400px;
+    width: 450px;
     max-width: 25vw;
     background-color: var(--white);
     text-align: center;
@@ -413,7 +412,7 @@ p {
     text-decoration: none;
     color: var(--text-dark-gray);
     margin: 2%;
-    transition: all 100ms;
+    transition: transform 100ms;
 }
 
 /* 卡片被懸停時的互動 */
