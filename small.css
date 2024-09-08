@@ -58,11 +58,15 @@
     width: 100%;
 }
 
+.services li h2 {
+    font-size: 3.5rem;
+}
+
 .services li p {
     max-width: 430px;
 }
 
-/* 專業保證區塊 */
+/* ---專業保證區塊--- */
 
 .emphasising-text {
     min-width: 330px;
